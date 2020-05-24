@@ -103,6 +103,7 @@
             
             @include respond(phone){
                 font-size: 1rem;
+                columns: 1;
             }
         }
     }
