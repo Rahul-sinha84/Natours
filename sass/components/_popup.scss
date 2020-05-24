@@ -107,4 +107,12 @@
             }
         }
     }
+    
+    &__text{           
+            @include respond(phone){
+                font-size: 1rem;
+                column-count: 1;
+            }
+        }
 }
+
