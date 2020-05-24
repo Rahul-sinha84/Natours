@@ -1,0 +1,109 @@
+.popup{
+    height: 100vh;
+    width: 100%;
+    background-color:rgba($color-black, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 3000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+
+    
+    &:target{
+        opacity: 1;
+        visibility: visible;
+    }
+    &__close{
+        float: right;
+        &-button{
+            &:link,
+            &:visited{
+                text-decoration: none;
+                font-size: 4rem;
+                position: absolute;
+                top: 0;
+                right: 25px;
+                color: $color-grey-dark;
+                transition: all 0.3s;
+            }
+            &:hover{
+                color: $color-primary;
+            }
+        }
+    }
+    &__content{
+        @include absCenter;
+        background-color: #fff;
+        width: 75%;
+        box-shadow: 0 1rem 4rem rgba($color-black,0.2);
+        border-radius: 3px;
+        display: table;
+        overflow: hidden;
+    }
+    &__left{
+        width: 33.3%;
+        display: table-cell;
+    }
+    &__right{
+        width: 66.6667%;
+        display: table-cell;
+        vertical-align: middle;
+        padding: 3rem 5rem;
+    }
+    &__img{
+        width: 100%;
+        display: block;
+    }
+    &__text{
+        font-size: 1.4rem; 
+        column-count: 2;
+        column-gap: 4rem;
+        column-rule: 2px solid $color-grey-light-1;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+    }
+
+    @include respond(tab-port){
+        &__close{
+            &-button{
+                &:link,
+                &:visited{
+                    font-size: 2rem;
+                    right: 5px;
+                }
+            }
+        }
+        &__content{
+            width: 45%;
+            display: inline-block;
+        }
+        &__left{
+            width: 100%;
+            display: inline-block;
+        }
+        &__right{
+            width: 100%;
+            display: inline-block;
+            padding:0;
+        }
+        &__img{
+            display: inline-block;
+            width: 50%;
+            
+        }
+        .photo-2{
+            float: right;
+            width: 48.75%;
+        }
+        &__text{
+            font-size: 1.1rem; 
+            margin-bottom: 1rem;
+            
+            @include respond(phone){
+                font-size: 1rem;
+            }
+        }
+    }
+}

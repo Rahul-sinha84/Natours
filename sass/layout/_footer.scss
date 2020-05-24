@@ -1,0 +1,100 @@
+.footer-main{
+    padding: 10rem 0;
+    background-color: $color-grey-dark-3;
+}
+.footer{
+    &{
+        padding-top: 0;
+
+    }
+    &__container{
+        @include respond(tab-port){
+            max-width: 57rem !important; 
+        }
+    }
+    //for logo
+    &__logo{
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+
+        @include respond(tab-port){
+            margin-bottom: 0;
+        }
+    }
+    &__sub{
+    //for links
+        
+        &-links{
+            padding-top: 1.5rem;
+            border-top: 0.5px solid $color-grey-light-1;
+            width: 90%;
+            margin: 0;
+        }
+        &::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        &-links-ul{
+            list-style: none;
+           
+            li{
+                &{
+                    float: left;
+                }
+                &:not(:last-child){
+                    margin-right: 2.72rem;
+                    //for making responsive at points other than our mixins
+                    @media (max-width:1040px) {
+                        margin-right: 2.6rem;
+                    }
+                    
+                    @media (max-width:1040px) {
+                        margin-right: 2.5rem;
+                    }
+
+                    @media (max-width:1022px) {
+                        margin-right: 2.4rem;
+                    }
+
+                    @media (max-width:1015px) {
+                        margin-right: 2.3rem;
+                    }
+
+                    @media (max-width:1007px) {
+                        margin-right: 0.8rem;
+                    }
+
+                    @include respond(tab-port){
+                        margin-right: 2.3rem;
+                    }
+                }
+                a:link,
+                a:visited{
+                    text-decoration: none;
+                    color: inherit;
+                    text-transform: uppercase;
+                    font-size: 1.3rem;
+                    display: inline-block;
+                    font-weight: 700;
+                    transition: all 0.2s;
+                    color: $color-grey-light-1;
+                }
+                a:hover{
+                    color: $color-primary-dark;
+                    transform: scale(1.2) rotate(5deg);
+                    box-shadow: 0 0.3rem 1.5rem rgba($color-black,0.2);
+                }
+            }
+        }
+        //for about
+        &-about{
+            padding-top: 1.5rem;
+            border-top: 0.5px solid $color-grey-light-1;
+            width: 90%;
+            margin: 0;
+            color: $color-grey-light-1;
+        }
+    } 
+}

@@ -1,0 +1,40 @@
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+html{
+    // This defines what 1rem is
+    font-size: 62.5%;       // 1rem = 10px;  10px/16px = 62.5%
+    /*
+   we done this because the default font-size given by the browsers is 16px, but we want 10px so 
+   62.5% of 16px is 10px
+   */
+    
+    @include respond(tab-land){
+        font-size: 56.25%;
+    }
+    
+    @include respond(tab-port){
+        font-size: 50%;
+    }
+    @include respond(phone){
+        font-size: 50%;
+    }
+    @include respond(big-desktop){
+        font-size: 75%;
+    }
+}
+body{
+    box-sizing: border-box;
+    padding: 3rem;
+    @include respond(tab-port){
+        padding: 0;
+    }
+}
+::selection{
+    background-color: $color-primary;
+    color: $color-grey-light-1;
+}
