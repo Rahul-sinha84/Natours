@@ -737,7 +737,8 @@ body {
       margin-bottom: 1rem; } }
   @media (max-width: 56.25em) and (max-width: 37.5em) {
     .popup__text {
-      font-size: 1rem; } }
+      font-size: 1rem;
+      column-count:1; } }
 
 .footer-main {
   padding: 10rem 0;
